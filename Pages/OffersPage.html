@@ -1,56 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StageConnect</title>
-  <link rel="stylesheet" href="../Styles/SharedTemplate.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StageConnect - Offres de stage</title>
+    <link rel="stylesheet" href="../Styles/SharedTemplate.css">
+    <link rel="stylesheet" href="OffresPage.css">
 </head>
 <body>
 
     <header class="site-header">
         <div class="container">
-            <h1>StageConnect</h1>
-            <nav>
+            <div class="navbar flex-between">
+                <div class="logo">StageConnect</div>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="../Pages/PortfolioPage.html">Mon Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Accueil.html">Accueil</a></li>
+                    <li><a href="OffersPage.html" class="active">Offres de stage</a></li>
+                    <li><a href="MyPortfolio.html">Mon Portfolio</a></li>
+                    <li><a href="Admin-Dashboard.html">Admin</a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
     </header>
+
     <main>
         <section class="section">
             <div class="container">
-                <h2>Offres de Stage</h2>
-                <p>Découvrez les offres de stage disponibles pour les étudiants en informatique. Trouvez le stage qui correspond à vos compétences et à vos aspirations professionnelles.</p>
+                <h1 class="text-center mb-4">Recherche de stage</h1>
                 
-                <div class="card">
-                    <h3 class="card-title">Développeur Web - Stage de 6 mois</h3>
-                    <p class="card-text"><strong>Entreprise :</strong> Tech Innovators</p>
-                    <p class="card-text"><strong>Description :</strong> Participez au développement de notre plateforme web en utilisant les dernières technologies.</p>
-                    <p class="card-text"><strong>Compétences requises :</strong> HTML, CSS, JavaScript, React</p>
-                    <a href="./ApplyPage.html" class="btn btn-primary">Postuler</a>
+                <div class="form-box filter-box mb-4">
+                    <div class="grid grid-3">
+                        <div class="form-group mb-0">
+                            <label class="form-label" for="search-mots">Mots clés</label>
+                            <input type="text" id="search-mots" class="form-control" placeholder="Ex: Développeur, Design...">
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="form-label" for="search-lieu">Lieu</label>
+                            <input type="text" id="search-lieu" class="form-control" placeholder="Ex: Tunis, Rades...">
+                        </div>
+                        <div class="form-group mb-0 filter-action">
+                            <label class="form-label">&nbsp;</label>
+                            <button class="btn btn-primary" style="width: 100%;">Rechercher</button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="card">
-                    <h3 class="card-title">Développeur Mobile - Stage de 4 mois</h3>
-                    <p class="card-text"><strong>Entreprise :</strong> App Solutions</p>
-                    <p class="card-text"><strong>Description :</strong> Contribuez au développement d'applications mobiles pour les plateformes iOS et Android.</p>
-                    <p class="card-text"><strong>Compétences requises :</strong> Swift, Kotlin, React Native</p>
-                    <a href="./ApplyPage.html" class="btn btn-primary">Postuler</a>
+
+                <div class="grid grid-2">
+                    
+                    <div class="card">
+                        <div class="flex-between mb-1">
+                            <h3 class="card-title" style="margin-bottom: 0;">Développeur Full-Stack</h3>
+                            <span class="badge badge-accepted">Nouveau</span>
+                        </div>
+                        <p class="card-text"><strong>TechCorp Tunis</strong></p>
+                        <ul class="offer-details mb-2 mt-1">
+                            <li>📍 Lieu : Rades, Tunisie</li>
+                            <li>⏱ Durée : 4 à 6 mois</li>
+                        </ul>
+                        <p class="card-text">Conception et développement d'une application interne de gestion de ressources humaines. Stack technique : PHP, MySQL, JavaScript.</p>
+                        <div class="flex mt-3" style="gap: 10px;">
+                            <button class="btn btn-primary">Postuler</button>
+                            <button class="btn btn-outline">Voir détails</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex-between mb-1">
+                            <h3 class="card-title" style="margin-bottom: 0;">Assistant(e) Ressources Humaines</h3>
+                        </div>
+                        <p class="card-text"><strong>Groupe Alpha</strong></p>
+                        <ul class="offer-details mb-2 mt-1">
+                            <li>📍 Lieu : Tunis, Tunisie</li>
+                            <li>⏱ Durée : 2 mois</li>
+                        </ul>
+                        <p class="card-text">Assistance dans le processus de recrutement, tri des CV, et organisation des entretiens. Bonnes compétences en communication requises.</p>
+                        <div class="flex mt-3" style="gap: 10px;">
+                            <button class="btn btn-primary">Postuler</button>
+                            <button class="btn btn-outline">Voir détails</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex-between mb-1">
+                            <h3 class="card-title" style="margin-bottom: 0;">Designer UX/UI</h3>
+                            <span class="badge badge-accepted">Urgent</span>
+                        </div>
+                        <p class="card-text"><strong>Creative Studio</strong></p>
+                        <ul class="offer-details mb-2 mt-1">
+                            <li>📍 Lieu : Sousse, Tunisie</li>
+                            <li>⏱ Durée : 3 mois</li>
+                        </ul>
+                        <p class="card-text">Refonte complète de l'interface d'une application mobile e-commerce. Maîtrise de Figma ou Adobe XD indispensable.</p>
+                        <div class="flex mt-3" style="gap: 10px;">
+                            <button class="btn btn-primary">Postuler</button>
+                            <button class="btn btn-outline">Voir détails</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex-between mb-1">
+                            <h3 class="card-title" style="margin-bottom: 0;">Technicien Réseaux</h3>
+                        </div>
+                        <p class="card-text"><strong>NetSolutions</strong></p>
+                        <ul class="offer-details mb-2 mt-1">
+                            <li>📍 Lieu : Ben Arous, Tunisie</li>
+                            <li>⏱ Durée : 4 mois</li>
+                        </ul>
+                        <p class="card-text">Déploiement et maintenance de l'infrastructure réseau pour divers clients de l'entreprise. Assistance technique niveau 1 et 2.</p>
+                        <div class="flex mt-3" style="gap: 10px;">
+                            <button class="btn btn-primary">Postuler</button>
+                            <button class="btn btn-outline">Voir détails</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            
-            
-
         </section>
     </main>
+
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2024 StageConnect. Tous droits réservés.</p>
+        <div class="container text-center">
+            <p>&copy; 2026 StageConnect - Plateforme de gestion des stages.</p>
         </div>
     </footer>
+
 </body>
 </html>

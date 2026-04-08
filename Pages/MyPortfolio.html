@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StageConnect - Mon Portfolio</title>
+    <link rel="stylesheet" href="../Styles/SharedTemplate.css">
+    <link rel="stylesheet" href="../Styles/MyPortfolio.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="navbar flex-between">
+                <div class="logo">StageConnect</div>
+                <ul class="nav-links">
+                    <li><a href="Accueil.html">Accueil</a></li>
+                    <li><a href="Offres.html">Offres de stage</a></li>
+                    <li><a href="MyPortfolio.html" class="active">Mon Portfolio</a></li>
+                    <li><a href="Admin-Dashboard.html">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                
+                <div class="card profile-header text-center mb-4">
+                    <div class="avatar-placeholder mx-auto"></div>
+                    <h1 style="margin-bottom: 5px;">Hajjej Mouheb</h1>
+                    <p class="profile-title">Étudiant en Développement Web</p>
+                    <p class="profile-bio">Passionné par le développement front-end et back-end. À la recherche d'un stage de fin d'études de 4 à 6 mois pour mettre en pratique mes compétences et apprendre de nouvelles technologies.</p>
+                    <span class="badge badge-accepted">Profil Public & Visible</span>
+                </div>
+
+                <div class="grid grid-2 profile-grid">
+                    
+                    <div>
+                        <div class="card mb-3">
+                            <h3 class="card-title">Informations Personnelles</h3>
+                            <ul class="info-list">
+                                <li><strong>Email :</strong> etudiant@stageconnect.tn</li>
+                                <li><strong>Téléphone :</strong> +216 20 000 000</li>
+                                <li><strong>Localisation :</strong> Rades, Tunisie</li>
+                                <li><strong>Disponibilité :</strong> Immédiate</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-box" style="max-width: 100%; margin: 0;">
+                            <h3 class="card-title">Mon Curriculum Vitae</h3>
+                            <p class="card-text mb-2">Importez votre CV au format PDF pour postuler aux offres.</p>
+                            
+                            <form action="#" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="form-label" for="cv-upload">Sélectionner un fichier (PDF)</label>
+                                    <input type="file" id="cv-upload" class="form-control" accept=".pdf">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sauvegarder le CV</button>
+                            </form>
+                            <div class="mt-2 text-center">
+                                <span class="badge badge-pending">Aucun CV uploadé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card mb-3">
+                            <h3 class="card-title flex-between">
+                                Compétences
+                                <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;">Éditer</button>
+                            </h3>
+                            <div class="skills-tags mt-2">
+                                <span class="badge badge-accepted" style="background-color: var(--surface-soft); color: var(--secondary);">HTML5 / CSS3</span>
+                                <span class="badge badge-accepted" style="background-color: var(--surface-soft); color: var(--secondary);">PHP / MySQL</span>
+                                <span class="badge badge-accepted" style="background-color: var(--surface-soft); color: var(--secondary);">JavaScript</span>
+                                <span class="badge badge-accepted" style="background-color: var(--surface-soft); color: var(--secondary);">Git / VS Code</span>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <h3 class="card-title flex-between">
+                                Formation
+                                <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;">Ajouter</button>
+                            </h3>
+                            <div class="timeline-item mt-2">
+                                <h4>Licence en Informatique (En cours)</h4>
+                                <p class="card-text" style="margin-bottom: 2px;">Institut Supérieur, Ben Arous</p>
+                                <p class="card-text" style="font-size: 0.85rem;">2024 - Présent</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title flex-between">
+                                Expériences & Projets
+                                <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;">Ajouter</button>
+                            </h3>
+                            <div class="timeline-item mt-2">
+                                <h4>Projet de classe : StageConnect</h4>
+                                <p class="card-text" style="margin-bottom: 2px;">Projet de conception multimédia.</p>
+                                <p class="card-text" style="font-size: 0.85rem;">Développement Front-End et Back-End.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p>&copy; 2026 StageConnect - Projet Étudiant.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
