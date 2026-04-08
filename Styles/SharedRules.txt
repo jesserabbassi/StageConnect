@@ -1,0 +1,65 @@
+================= STAGECONNECT HTML CLASS RULES =================
+
+STRUCTURE
+<header> → site-header
+<footer> → site-footer
+<main> → (no class)
+<section> → section
+<div> (wrapper) → container
+
+NAVBAR
+<div> → navbar flex-between
+<ul> → nav-links
+<a> (active) → active
+<div> (logo) → logo
+
+LAYOUT
+<div> (2 cols) → grid grid-2
+<div> (3 cols) → grid grid-3
+<div> → flex
+<div> → flex-between
+
+CARDS
+<div> → card
+<h3> → card-title
+<p> → card-text
+
+BUTTONS
+<button> → btn btn-primary
+<button> → btn btn-outline
+<button> → btn btn-danger
+<button> → btn btn-success
+
+FORMS
+<div> → form-box
+<div> → form-group
+<label> → form-label
+<input> → form-control
+<textarea> → form-control
+<select> → form-control
+
+TABLES
+<div> → table-wrapper
+<table> → (no class)
+<thead> → (no class)
+<tbody> → (no class)
+<th> → (no class)
+<td> → (no class)
+
+STATUS
+<span> → badge badge-pending
+<span> → badge badge-accepted
+<span> → badge badge-rejected
+
+TEXT
+<h1> → (no class)
+<h2> → (no class)
+<h3> → (no class)
+<p> → (no class)
+
+SPACING (optional)
+<div> → mt-1 / mt-2 / mt-3 / mt-4
+<div> → mb-1 / mb-2 / mb-3 / mb-4
+<div> → text-center
+
+=================================================================
