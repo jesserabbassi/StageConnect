@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StageConnect — Plateforme de Gestion des Stages</title>
+    <meta name="description" content="Trouvez votre stage idéal avec StageConnect. La plateforme dédiée aux étudiants tunisiens.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HEADER — Sticky navigation bar
+══════════════════════════════════════════════════════════════ -->
+<header class="site-header">
+    <nav class="navbar container">
+
+        <!-- Brand / Logo -->
+        <a href="index.html" class="navbar-brand">
+            <div class="brand-icon">🎓</div>
+            <span class="brand-text">Stage<span>Connect</span></span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="navbar-nav">
+            <li><a href="index.html"   class="nav-link active">Accueil</a></li>
+            <li><a href="offres.php"   class="nav-link">Offres</a></li>
+            <li><a href="login.php"    class="nav-link">Connexion</a></li>
+            <li><a href="register.php" class="nav-link">Inscription</a></li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="navbar-actions">
+            <a href="login.php"    class="btn btn-outline btn-sm">Connexion</a>
+            <a href="register.php" class="btn btn-primary btn-sm">S'inscrire</a>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+    <div class="container" style="position:relative; z-index:1;">
+        <div class="hero-content animate-fade-up">
+
+            <!-- Badge -->
+            <div class="hero-badge">
+                🚀 Plateforme #1 pour les stagiaires tunisiens
+            </div>
+
+            <!-- Title -->
+            <h1 class="hero-title">
+                Trouvez votre<br>
+                <span class="highlight">stage idéal</span><br>
+                en quelques clics
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-desc">
+                StageConnect connecte les étudiants avec les meilleures entreprises.
+                Postulez en ligne, suivez vos candidatures et démarrez votre carrière.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+                <a href="offres.php"   class="btn btn-white btn-lg">📋 Voir les offres</a>
+                <a href="register.php" class="btn btn-outline btn-lg"
+                   style="color:white; border-color:rgba(255,255,255,.5);">
+                    Créer un compte
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Floating card (decorative, right side) -->
+    <div class="hero-image-side">
+        <div class="hero-floating-card animate-fade-up delay-2">
+            <div style="font-size:2rem; margin-bottom:12px;">📊</div>
+            <h3 style="color:white; font-size:1.1rem; margin-bottom:16px;">Statistiques</h3>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;
+                     background:rgba(255,255,255,.08); border-radius:8px; padding:10px 14px;">
+                    <span style="font-size:.88rem;">Offres disponibles</span>
+                    <strong style="color:#38BDF8;">6+</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;
+                     background:rgba(255,255,255,.08); border-radius:8px; padding:10px 14px;">
+                    <span style="font-size:.88rem;">Étudiants inscrits</span>
+                    <strong style="color:#38BDF8;">100+</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;
+                     background:rgba(255,255,255,.08); border-radius:8px; padding:10px 14px;">
+                    <span style="font-size:.88rem;">Entreprises partenaires</span>
+                    <strong style="color:#38BDF8;">20+</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;
+                     background:rgba(255,255,255,.08); border-radius:8px; padding:10px 14px;">
+                    <span style="font-size:.88rem;">Candidatures traitées</span>
+                    <strong style="color:#10B981;">✓ 50+</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════════════════════════ -->
+<section style="background: var(--white); padding: 40px 0; border-bottom: 1px solid var(--gray-200);">
+    <div class="container">
+        <div class="stats-row">
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number" data-target="6">6</span>
+                <div class="stat-label">Offres de stage</div>
+            </div>
+            <div class="stat-card animate-on-scroll delay-1">
+                <span class="stat-number" data-target="100">100</span>
+                <div class="stat-label">Étudiants inscrits</div>
+            </div>
+            <div class="stat-card animate-on-scroll delay-2">
+                <span class="stat-number" data-target="20">20</span>
+                <div class="stat-label">Entreprises partenaires</div>
+            </div>
+            <div class="stat-card animate-on-scroll delay-3">
+                <span class="stat-number" data-target="95">95</span>
+                <div class="stat-label">% Satisfaction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FEATURES SECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="feature-section">
+    <div class="container">
+        <div class="text-center" style="max-width:600px; margin:0 auto;">
+            <p class="section-label">Pourquoi StageConnect ?</p>
+            <h2 class="section-title">Une plateforme pensée<br>pour les étudiants</h2>
+            <p class="section-desc">
+                Nous simplifions chaque étape de votre recherche de stage,
+                de la découverte des offres jusqu'au suivi de vos candidatures.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔍</div>
+                <h3>Recherche rapide</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Filtrez les offres par domaine, ville ou entreprise en quelques secondes.
+                </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-card animate-on-scroll delay-1">
+                <div class="feature-icon">📄</div>
+                <h3>Candidature en ligne</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Postulez directement avec votre CV sans quitter la plateforme.
+                </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-card animate-on-scroll delay-2">
+                <div class="feature-icon">📊</div>
+                <h3>Suivi des candidatures</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Consultez le statut de chaque candidature en temps réel.
+                </p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="feature-card animate-on-scroll delay-3">
+                <div class="feature-icon">🔐</div>
+                <h3>Espace sécurisé</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Vos données personnelles sont protégées et chiffrées.
+                </p>
+            </div>
+            <!-- Feature 5 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📱</div>
+                <h3>Interface responsive</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Accessible depuis votre téléphone, tablette ou ordinateur.
+                </p>
+            </div>
+            <!-- Feature 6 -->
+            <div class="feature-card animate-on-scroll delay-1">
+                <div class="feature-icon">🎓</div>
+                <h3>Dédié aux étudiants</h3>
+                <p style="font-size:.88rem; margin-top:8px;">
+                    Conçu spécialement pour les besoins académiques et pédagogiques.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     RECENT OFFERS PREVIEW
+══════════════════════════════════════════════════════════════ -->
+<section style="padding: 80px 0; background: var(--bg);">
+    <div class="container">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between;
+             flex-wrap:wrap; gap:16px; margin-bottom:40px;">
+            <div>
+                <p class="section-label">Opportunités</p>
+                <h2 class="section-title">Offres récentes</h2>
+            </div>
+            <a href="offres.php" class="btn btn-outline">Voir toutes les offres →</a>
+        </div>
+
+        <!-- Static preview cards (dynamic version in offres.php) -->
+        <div class="offers-grid">
+
+            <!-- Card 1 -->
+            <article class="offer-card animate-on-scroll">
+                <div class="offer-company">
+                    <div class="company-avatar">TT</div>
+                    <div>
+                        <div style="font-size:.8rem; color:var(--gray-400);">TechTunisia</div>
+                        <div style="font-size:.78rem; color:var(--gray-400);">📍 Tunis</div>
+                    </div>
+                </div>
+                <h3 class="offer-title">Développeur Web Front-End</h3>
+                <div class="offer-meta">
+                    <span class="badge badge-primary">Développement Web</span>
+                    <span class="badge badge-gray">⏱ 3 mois</span>
+                </div>
+                <p class="offer-desc">
+                    Nous recherchons un stagiaire passionné par le développement web
+                    pour rejoindre notre équipe dynamique...
+                </p>
+                <div class="offer-footer">
+                    <span style="font-size:.8rem; color:var(--gray-400);">📅 Récent</span>
+                    <a href="login.php" class="btn btn-primary btn-sm">Postuler</a>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="offer-card animate-on-scroll delay-1">
+                <div class="offer-company">
+                    <div class="company-avatar">SN</div>
+                    <div>
+                        <div style="font-size:.8rem; color:var(--gray-400);">SecureNet Solutions</div>
+                        <div style="font-size:.78rem; color:var(--gray-400);">📍 Sfax</div>
+                    </div>
+                </div>
+                <h3 class="offer-title">Stage en Cybersécurité</h3>
+                <div class="offer-meta">
+                    <span class="badge badge-primary">Sécurité Informatique</span>
+                    <span class="badge badge-gray">⏱ 2 mois</span>
+                </div>
+                <p class="offer-desc">
+                    Rejoignez notre équipe sécurité pour découvrir le monde passionnant
+                    de la cybersécurité et du pentest...
+                </p>
+                <div class="offer-footer">
+                    <span style="font-size:.8rem; color:var(--gray-400);">📅 Récent</span>
+                    <a href="login.php" class="btn btn-primary btn-sm">Postuler</a>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="offer-card animate-on-scroll delay-2">
+                <div class="offer-company">
+                    <div class="company-avatar">DV</div>
+                    <div>
+                        <div style="font-size:.8rem; color:var(--gray-400);">DataVision Tunisia</div>
+                        <div style="font-size:.78rem; color:var(--gray-400);">📍 Tunis</div>
+                    </div>
+                </div>
+                <h3 class="offer-title">Stagiaire Data Analyst</h3>
+                <div class="offer-meta">
+                    <span class="badge badge-primary">Data Science</span>
+                    <span class="badge badge-gray">⏱ 4 mois</span>
+                </div>
+                <p class="offer-desc">
+                    Vous rejoindrez notre département data pour analyser des ensembles
+                    de données volumineuses avec Python et SQL...
+                </p>
+                <div class="offer-footer">
+                    <span style="font-size:.8rem; color:var(--gray-400);">📅 Récent</span>
+                    <a href="login.php" class="btn btn-primary btn-sm">Postuler</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     CTA SECTION
+══════════════════════════════════════════════════════════════ -->
+<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+       padding: 80px 0; text-align: center;">
+    <div class="container">
+        <h2 style="color:white; margin-bottom:16px;">Prêt à lancer votre carrière ?</h2>
+        <p style="color:rgba(255,255,255,.75); font-size:1.05rem; margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto;">
+            Rejoignez des centaines d'étudiants qui ont trouvé leur stage grâce à StageConnect.
+        </p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="register.php" class="btn btn-white btn-lg">Créer mon compte gratuit</a>
+            <a href="offres.php"   class="btn btn-outline btn-lg"
+               style="color:white; border-color:rgba(255,255,255,.5);">Parcourir les offres</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="index.html" class="navbar-brand" style="margin-bottom:12px;">
+                    <div class="brand-icon" style="width:36px;height:36px;font-size:1.1rem;">🎓</div>
+                    <span class="brand-text" style="color:white;">Stage<span>Connect</span></span>
+                </a>
+                <p>
+                    La plateforme dédiée à la gestion des stages pour étudiants.
+                    Conçue dans le cadre du module de Programmation Web et Multimédia.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="offres.php">Offres de stage</a></li>
+                    <li><a href="register.php">S'inscrire</a></li>
+                    <li><a href="login.php">Se connecter</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h4>Projet</h4>
+                <ul>
+                    <li><a href="#">Hajjej Mouheb</a></li>
+                    <li><a href="#">Abbessi Jesser</a></li>
+                    <li><a href="#">Programmation Web</a></li>
+                    <li><a href="#">2024-2025</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2025 StageConnect. Projet académique.</span>
+            <span style="color:#475569;">HTML5 · CSS3 · JavaScript · PHP · MySQL</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
