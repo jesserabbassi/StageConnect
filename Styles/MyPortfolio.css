@@ -1,0 +1,82 @@
+/* 7. mon-portfolio.css */
+/* Styles spécifiques pour la page Portfolio */
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-header {
+    background: linear-gradient(to bottom, var(--surface-soft) 0%, var(--surface) 100%);
+}
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: var(--border);
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 4px solid #fff;
+    box-shadow: var(--shadow-sm);
+    /* Image placeholder pattern */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236b7280'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-title {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.profile-bio {
+    max-width: 700px;
+    margin: 0 auto 16px auto;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-light);
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list strong {
+    color: var(--secondary);
+    display: inline-block;
+    width: 120px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timeline-item {
+    border-left: 2px solid var(--primary);
+    padding-left: 16px;
+    margin-bottom: 16px;
+}
+
+.timeline-item h4 {
+    color: var(--secondary);
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}

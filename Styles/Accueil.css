@@ -1,0 +1,13 @@
+/* 3. accueil.css */
+/* Styles spécifiques pour la page d'accueil */
+/* La majorité des styles proviennent de shared.css */
+
+.hero {
+    /* Ajustement spécifique au hero de l'accueil si nécessaire */
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+}
