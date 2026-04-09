@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,16 @@
     <link rel="stylesheet" href="../Styles/SharedTemplate.css">
     <link rel="stylesheet" href="../Styles/AdminDashboard.css">
 </head>
+
 <body>
+    <script src="../Js/Admin.js"></script>
 
     <header class="site-header">
         <div class="container">
             <div class="navbar flex-between">
-                <div class="logo">StageConnect <span style="color:var(--text-light); font-size:1rem; font-weight:normal;">| Administration</span></div>
+                <div class="logo">StageConnect <span
+                        style="color:var(--text-light); font-size:1rem; font-weight:normal;">| Administration</span>
+                </div>
                 <ul class="nav-links">
                     <li><a href="Accueil.html">Accueil site</a></li>
                     <li><a href="Admin-Dashboard.html" class="active">Tableau de bord</a></li>
@@ -45,23 +50,24 @@
                 <div class="grid grid-admin">
                     <div class="form-box" style="max-width: 100%; margin: 0; align-self: start;">
                         <h2 class="mb-3">Publier une offre</h2>
-                        <form action="#" method="POST">
+                        <form action="../PHP/AddOffer.php" method="POST">
                             <div class="form-group">
                                 <label class="form-label" for="titre">Titre du stage</label>
-                                <input type="text" id="titre" class="form-control" required placeholder="Ex: Développeur PHP">
+                                <input type="text" id="titre" name="titre" class="form-control" required
+                                    placeholder="Ex: Développeur PHP">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="entreprise">Entreprise</label>
-                                <input type="text" id="entreprise" class="form-control" required>
+                                <input type="text" id="entreprise" name="entreprise" class="form-control" required>
                             </div>
                             <div class="grid grid-2" style="gap: 12px;">
                                 <div class="form-group">
                                     <label class="form-label" for="lieu">Lieu</label>
-                                    <input type="text" id="lieu" class="form-control" required>
+                                    <input type="text" id="lieu" name="lieu" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" for="duree">Durée</label>
-                                    <select id="duree" class="form-control" required>
+                                    <select id="duree" name="duree" class="form-control" required>
                                         <option value="">Sélectionner...</option>
                                         <option value="1-2 mois">1 à 2 mois</option>
                                         <option value="3-4 mois">3 à 4 mois</option>
@@ -71,7 +77,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="description">Description</label>
-                                <textarea id="description" class="form-control" required placeholder="Détails de la mission..."></textarea>
+                                <textarea id="description" name="description" class="form-control" required
+                                    placeholder="Détails de la mission..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-success" style="width: 100%;">Ajouter l'offre</button>
                         </form>
@@ -129,11 +136,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <div class="mt-4">
                             <h2 class="mb-3">Dernières candidatures</h2>
                             <div class="card">
-                                <p class="card-text text-center">Sélectionnez une offre ci-dessus pour voir les candidatures associées ou naviguez vers la page détaillée des candidatures.</p>
+                                <p class="card-text text-center">Sélectionnez une offre ci-dessus pour voir les
+                                    candidatures associées ou naviguez vers la page détaillée des candidatures.</p>
                                 <div class="text-center mt-2">
                                     <button class="btn btn-primary">Voir toutes les candidatures</button>
                                 </div>
@@ -153,4 +161,5 @@
     </footer>
 
 </body>
+
 </html>
