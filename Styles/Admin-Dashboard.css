@@ -1,0 +1,36 @@
+/* 9. admin-dashboard.css */
+/* Styles spécifiques pour le dashboard admin */
+
+.pt-3 {
+    padding-top: 40px;
+}
+
+.stat-card {
+    background-color: var(--surface);
+    border-top: 4px solid var(--primary);
+}
+
+.stat-number {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+/* Custom grid for admin to give the table more space than the form */
+.grid-admin {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-md);
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    margin-right: 4px;
+}
+
+@media (max-width: 1000px) {
+    .grid-admin {
+        grid-template-columns: 1fr;
+    }
+}
