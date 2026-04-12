@@ -3,54 +3,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('tbody');
     const compteur = document.querySelector('.stat-number');
 
-    form.addEventListener('submit', function(e) {
-        // 1. On bloque le rechargement de la page
-        e.preventDefault(); 
+    if (!form) {
+        return;
+    }
 
-        // 2. On "emballe" toutes les données du formulaire automatiquement
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
         const formData = new FormData(this);
+        const titre = document.getElementById('titre')?.value.trim() || '';
+        const entreprise = document.getElementById('entreprise')?.value.trim() || '';
 
-        // 3. On envoie ces données au fichier PHP en arrière-plan
-        fetch('ajouter-offre.php', {
-            method: 'POST',
+        fetch(form.action, {
+            method: form.method || 'POST',
             body: formData
         })
-        .then(response => response.text()) // On lit la réponse du PHP
-        .then(result => {
-            if (result.trim() === 'success') {
-                // 4. LE PHP A RÉUSSI ! On met à jour le visuel en direct
+            .then((response) => response.text())
+            .then((result) => {
+                if (result.trim() === 'success') {
+                    if (tableBody) {
+                        const newRow =
+                            '<tr>' +
+                                '<td><strong>' + titre + '</strong></td>' +
+                                '<td>' + entreprise + '</td>' +
+                                '<td><span class="badge badge-accepted">Active</span></td>' +
+                                '<td>' +
+                                    '<button class="btn btn-outline btn-sm">Editer</button>' +
+                                    '<button class="btn btn-danger btn-sm">Supprimer</button>' +
+                                '</td>' +
+                            '</tr>';
 
-                // Récupération des valeurs pour l'affichage
-                const titre = document.getElementById('titre').value;
-                const entreprise = document.getElementById('entreprise').value;
+                        tableBody.insertAdjacentHTML('afterbegin', newRow);
+                    }
 
-                // Insertion de la ligne dans le tableau
-                tableBody.insertAdjacentHTML('afterbegin', `
-                    <tr>
-                        <td><strong>${titre}</strong></td>
-                        <td>${entreprise}</td>
-                        <td><span class="badge badge-accepted">Active</span></td>
-                        <td>
-                            <button class="btn btn-outline btn-sm">Éditer</button>
-                            <button class="btn btn-danger btn-sm">Supprimer</button>
-                        </td>
-                    </tr>
-                `);
+                    form.reset();
 
-                // On vide le formulaire et on augmente le compteur
-                form.reset();
-                if(compteur) {
-                    compteur.textContent = parseInt(compteur.textContent) + 1;
+                    if (compteur) {
+                        compteur.textContent = String((parseInt(compteur.textContent, 10) || 0) + 1);
+                    }
+
+                    alert("Super ! L'offre a ete ajoutee a la base de donnees.");
+                } else {
+                    alert("Oups, un probleme est survenu lors de l'ajout.");
                 }
-                
-                // Petit retour visuel sympa
-                alert("Super ! L'offre a été ajoutée à la base de données.");
-            } else {
-                alert("Oups, un problème est survenu lors de l'ajout.");
-            }
-        })
-        .catch(error => {
-            console.error("Erreur de connexion avec le serveur:", error);
-        });
+            })
+            .catch((error) => {
+                console.error('Erreur de connexion avec le serveur:', error);
+                alert("Impossible de contacter le serveur pour ajouter l'offre.");
+            });
     });
 });
