@@ -1,6 +1,5 @@
 /* =========================================================
-   StageConnect - Shared Design System
-   Use this file on every page before page-specific CSS
+   StageConnect - Shared Design System (Clean Version)
    ========================================================= */
 
 /* ---------- 1) CSS Reset ---------- */
@@ -12,9 +11,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -58,65 +55,25 @@ body {
 }
 
 /* ---------- 3) Global Elements ---------- */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button, input, select, textarea { font: inherit; }
 
 /* ---------- 4) Layout Utilities ---------- */
-.container {
-  width: min(90%, var(--container));
-  margin: 0 auto;
-}
+.container { width: min(90%, var(--container)); margin: 0 auto; }
+.section { padding: var(--space-xl) 0; }
 
-.section {
-  padding: var(--space-xl) 0;
-}
+.grid { display: grid; gap: var(--space-md); }
+.grid-2 { grid-template-columns: repeat(2,1fr); }
+.grid-3 { grid-template-columns: repeat(3,1fr); }
 
-.grid {
-  display: grid;
-  gap: var(--space-md);
-}
+.flex { display: flex; align-items: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
 
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
+.text-center { text-align: center; }
 
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.text-center {
-  text-align: center;
-}
-
+/* Spacing */
 .mt-1 { margin-top: var(--space-xs); }
 .mt-2 { margin-top: var(--space-sm); }
 .mt-3 { margin-top: var(--space-md); }
@@ -134,20 +91,9 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: var(--space-md);
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: var(--space-sm);
-}
-
-h3 {
-  font-size: 1.25rem;
-  margin-bottom: var(--space-xs);
-}
+h1 { font-size: 2.2rem; margin-bottom: var(--space-md); }
+h2 { font-size: 1.8rem; margin-bottom: var(--space-sm); }
+h3 { font-size: 1.25rem; margin-bottom: var(--space-xs); }
 
 p {
   color: var(--text-light);
@@ -164,9 +110,7 @@ p {
   z-index: 1000;
 }
 
-.navbar {
-  min-height: 72px;
-}
+.navbar { min-height: 72px; }
 
 .logo {
   font-size: 1.4rem;
@@ -236,15 +180,8 @@ p {
   color: #fff;
 }
 
-.btn-danger {
-  background: var(--danger);
-  color: #fff;
-}
-
-.btn-success {
-  background: var(--success);
-  color: #fff;
-}
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-success { background: var(--success); color: #fff; }
 
 /* ---------- 9) Cards ---------- */
 .card {
@@ -255,20 +192,9 @@ p {
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
 }
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.card-title {
-  margin-bottom: 10px;
-  color: var(--secondary);
-}
-
-.card-text {
-  color: var(--text-light);
-}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.card-title  { margin-bottom: 10px; color: var(--secondary); }
+.card-text   { color: var(--text-light); }
 
 /* ---------- 10) Forms ---------- */
 .form-box {
@@ -281,9 +207,7 @@ p {
   margin: 0 auto;
 }
 
-.form-group {
-  margin-bottom: 18px;
-}
+.form-group { margin-bottom: 18px; }
 
 .form-label {
   display: block;
@@ -305,7 +229,7 @@ p {
 
 .form-control:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
 }
 
 textarea.form-control {
@@ -322,54 +246,31 @@ textarea.form-control {
   box-shadow: var(--shadow-sm);
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+table { width: 100%; border-collapse: collapse; }
 
-thead {
-  background: var(--surface-soft);
-}
+thead { background: var(--surface-soft); }
 
-th,
-td {
+th, td {
   padding: 14px 16px;
   text-align: left;
   border-bottom: 1px solid var(--border);
 }
 
-th {
-  color: var(--secondary);
-  font-weight: 700;
-}
+th { color: var(--secondary); font-weight: 700; }
+td { color: var(--text-light); }
 
-td {
-  color: var(--text-light);
-}
-
-/* ---------- 12) Badges / Status ---------- */
+/* ---------- 12) Badges ---------- */
 .badge {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 600;
 }
 
-.badge-pending {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.badge-accepted {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.badge-rejected {
-  background: #fee2e2;
-  color: #991b1b;
-}
+.badge-pending { background: #fef3c7; color: #92400e; }
+.badge-accepted { background: #dcfce7; color: #166534; }
+.badge-rejected { background: #fee2e2; color: #991b1b; }
 
 /* ---------- 13) Footer ---------- */
 .site-footer {
@@ -387,23 +288,15 @@ td {
 
 /* ---------- 14) Responsive ---------- */
 @media (max-width: 900px) {
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
 
   .nav-links {
     gap: 14px;
     flex-wrap: wrap;
   }
 
-  h1 {
-    font-size: 1.9rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
 }
 
 @media (max-width: 600px) {
@@ -414,9 +307,7 @@ td {
     align-items: flex-start;
   }
 
-  .hero {
-    padding: 56px 0;
-  }
+  .hero { padding: 56px 0; }
 
   .btn {
     width: 100%;
