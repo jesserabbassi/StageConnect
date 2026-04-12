@@ -1,10 +1,31 @@
-/* 1. accueil.js */
-/* Code simplifié pour l'accueil */
+/* =====================================================
+   StageConnect — Page Accueil
+   Fichier : index.js
+   ===================================================== */
 
-// Ajoute une petite interaction sur les boutons "Postuler"
-document.querySelectorAll('.card .btn-primary').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Redirection classique laissée active, mais on peut loguer l'action
-        console.log("Préparation de la candidature...");
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  initNavMobile();
+  initScrollReveal();
+  initCounters();
 });
+
+/* ── Hamburger (mobile) ── */
+function initNavMobile() {
+  const btn   = document.getElementById('burger');
+  const nav   = document.getElementById('nav-menu');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', () => nav.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.site-header')) nav.classList.remove('open');
+  });
+}
+
+/* ── Scroll reveal ── */
+function initScrollReveal() {
+  const els = document.querySelectorAll('.scroll-reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => obs.observe(el));
+}
+

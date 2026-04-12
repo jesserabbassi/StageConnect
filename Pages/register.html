@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription — StageConnect</title>
+  <link rel="stylesheet" href="../Styles/SharedTemplate.css">
+  <link rel="stylesheet" href="../Styles/register.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar flex-between">
+      <a href="Accueil.html" class="logo">🎓 StageConnect</a>
+      <ul class="nav-links">
+        <li><a href="Accueil.html">Accueil</a></li>
+        <li><a href="OffersPage.html">Offres</a></li>
+        <li><a href="login.html">Connexion</a></li>
+        <li><a href="register.html" class="active">Inscription</a></li>
+      </ul>
+      <a href="login.html" class="btn btn-outline" style="padding:8px 16px;">Connexion</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="auth-logo">
+      <div class="icon">🎓</div>
+      <h2>Créer un compte</h2>
+      <p>Rejoignez StageConnect et trouvez votre stage idéal</p>
+    </div>
+
+    <form id="register-form" novalidate>
+
+      <div class="form-group">
+        <label for="name" class="form-label">Nom complet *</label>
+        <div class="input-icon-wrap">
+          <span class="input-icon">👤</span>
+          <input type="text" id="name" name="name" class="form-control"
+                 placeholder="Ex : Hajjej Mouheb" autocomplete="name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Adresse email *</label>
+        <div class="input-icon-wrap">
+          <span class="input-icon">✉</span>
+          <input type="email" id="email" name="email" class="form-control"
+                 placeholder="votre@email.tn" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Mot de passe *</label>
+        <div class="input-row">
+          <div class="input-icon-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="Minimum 8 caractères" autocomplete="new-password" required>
+          </div>
+          <button type="button" class="btn-eye" data-eye="password">👁</button>
+        </div>
+
+        <div class="strength-bars">
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+        </div>
+        <span class="strength-text"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password2" class="form-label">Confirmer le mot de passe *</label>
+        <div class="input-icon-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password2" name="password2" class="form-control"
+                 placeholder="Répétez votre mot de passe" autocomplete="new-password" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full">Créer mon compte →</button>
+
+    </form>
+
+    <div class="pwd-rules">
+      <strong>ℹ Règles du mot de passe</strong>
+      <ul>
+        <li>Au moins 8 caractères</li>
+        <li>Une lettre majuscule (A-Z)</li>
+        <li>Un chiffre (0-9)</li>
+        <li>Un caractère spécial recommandé</li>
+      </ul>
+    </div>
+
+    <p class="auth-link">
+      Déjà un compte ?
+      <a href="login.html">Se connecter</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 StageConnect — Projet académique</p>
+  </div>
+</footer>
+
+<script src="../Js/register.js"></script>
+</body>
+</html>
