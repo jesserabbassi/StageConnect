@@ -1,20 +1,36 @@
-/* 2. offres.js */
-/* Filtrage et simulation de candidature simplifiés */
+document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.querySelector('.filter-action .btn-primary');
+    const searchMots = document.getElementById('search-mots');
+    const searchLieu = document.getElementById('search-lieu');
+    const offerCards = document.querySelectorAll('main .grid.grid-2 > .card');
 
-// Filtrage simple
-document.querySelector('.filter-action .btn-primary').addEventListener('click', (e) => {
-    e.preventDefault(); 
-    const mots = document.getElementById('search-mots').value.toLowerCase();
-    const lieu = document.getElementById('search-lieu').value.toLowerCase();
+    if (searchButton && searchMots && searchLieu) {
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
 
-    document.querySelectorAll('.grid-2 .card').forEach(card => {
-        const texte = card.textContent.toLowerCase();
-        // Affiche la carte seulement si elle contient les mots ET le lieu
-        card.style.display = (texte.includes(mots) && texte.includes(lieu)) ? 'block' : 'none';
+            const mots = searchMots.value.toLowerCase().trim();
+            const lieu = searchLieu.value.toLowerCase().trim();
+
+            offerCards.forEach((card) => {
+                const texte = card.textContent.toLowerCase();
+                const matchesMots = !mots || texte.includes(mots);
+                const matchesLieu = !lieu || texte.includes(lieu);
+
+                card.style.display = matchesMots && matchesLieu ? 'block' : 'none';
+            });
+        });
+    }
+
+    offerCards.forEach((card) => {
+        const applyButton = card.querySelector('.btn-primary');
+
+        if (!applyButton) {
+            return;
+        }
+
+        applyButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Candidature envoyee avec succes !');
+        });
     });
-});
-
-// Alerte de candidature
-document.querySelectorAll('.card .btn-primary').forEach(btn => {
-    btn.addEventListener('click', () => alert("Candidature envoyée avec succès !"));
 });
