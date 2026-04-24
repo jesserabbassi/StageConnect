@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StageConnect | Offres de stage</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/offres.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="offres">
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar flex-between">
+        <div class="logo">StageConnect</div>
+        <ul class="nav-links">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="offres.html" class="active">Offres</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="dashboard.html" id="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="login.html" id="nav-auth-link">Connexion</a></li>
+          <li><a href="register.html" id="nav-register-link">Inscription</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-2">
+    <div id="flash-container"></div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="flex-between offers-header mb-4">
+          <div class="section-heading">
+            <span class="eyebrow mb-2">Catalogue des stages</span>
+            <h1 class="mb-2">Consulter et filtrer les offres disponibles</h1>
+            <p>
+              Cette page présente les offres publiées dans la base de données. Le filtre ci-dessous sert de
+              recherche rapide par mot-clé, entreprise, localisation ou durée.
+            </p>
+          </div>
+          <a href="register.html" class="btn btn-outline">Créer un compte étudiant</a>
+        </div>
+
+        <div class="card filters-card mb-4">
+          <div class="grid grid-3">
+            <div class="form-group mb-1">
+              <label for="filter-keyword" class="form-label">Recherche</label>
+              <input type="text" id="filter-keyword" class="form-control" placeholder="Titre ou description">
+            </div>
+            <div class="form-group mb-1">
+              <label for="filter-company" class="form-label">Entreprise</label>
+              <input type="text" id="filter-company" class="form-control" placeholder="Nom de l'entreprise">
+            </div>
+            <div class="form-group mb-1">
+              <label for="filter-location" class="form-label">Localisation</label>
+              <input type="text" id="filter-location" class="form-control" placeholder="Ville ou région">
+            </div>
+          </div>
+          <div class="grid grid-3 mt-2">
+            <div class="form-group mb-1">
+              <label for="filter-duration" class="form-label">Durée</label>
+              <select id="filter-duration" class="form-control">
+                <option value="">Toutes les durées</option>
+                <option value="2 mois">2 mois</option>
+                <option value="3 mois">3 mois</option>
+                <option value="4 mois">4 mois</option>
+                <option value="6 mois">6 mois</option>
+              </select>
+            </div>
+            <div class="form-group mb-1">
+              <label for="filter-sort" class="form-label">Tri</label>
+              <select id="filter-sort" class="form-control">
+                <option value="recent">Les plus récentes</option>
+                <option value="company">Entreprise A-Z</option>
+                <option value="location">Localisation A-Z</option>
+              </select>
+            </div>
+            <div class="form-group mb-1">
+              <label class="form-label">Action</label>
+              <button type="button" id="reset-filters" class="btn btn-outline">Réinitialiser les filtres</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-2 offers-grid" id="offers-grid">
+          <div class="empty-state">
+            <p class="mb-1">Chargement des offres en cours...</p>
+            <p class="small-text">La liste sera remplie automatiquement depuis la base de données.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>StageConnect | Accédez à des offres de stage adaptées à votre parcours.</p>
+    </div>
+  </footer>
+</body>
+</html>

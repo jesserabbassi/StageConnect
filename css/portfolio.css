@@ -1,0 +1,36 @@
+.portfolio-layout {
+  align-items: start;
+}
+
+.portfolio-preview,
+.portfolio-extra {
+  display: grid;
+  gap: 20px;
+}
+
+.profile-summary {
+  padding: 28px;
+}
+
+.profile-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-block {
+  padding: 22px;
+}
+
+.profile-block p {
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+
+.public-link-box {
+  word-break: break-word;
+}
+
+@media (max-width: 960px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+  }
+}

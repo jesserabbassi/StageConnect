@@ -1,0 +1,22 @@
+.offers-header {
+  align-items: end;
+}
+
+.filters-card {
+  padding: 28px;
+}
+
+.offers-grid .card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+.offer-actions {
+  margin-top: auto;
+}
+
+.offer-description {
+  white-space: pre-line;
+}

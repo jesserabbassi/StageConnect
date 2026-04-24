@@ -1,0 +1,28 @@
+.dashboard-hero {
+  align-items: end;
+}
+
+.stats-grid .card {
+  height: 100%;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.table-form {
+  display: inline;
+}
+
+.table-form .btn,
+.table-actions .btn {
+  width: auto;
+}
+
+.dashboard-guard {
+  max-width: 620px;
+  margin: 0 auto;
+}
