@@ -5,6 +5,13 @@ declare(strict_types=1);
 date_default_timezone_set('Africa/Tunis');
 
 if (session_status() === PHP_SESSION_NONE) {
+    $sessionPath = dirname(__DIR__) . '/tmp/sessions';
+
+    if (!is_dir($sessionPath)) {
+        mkdir($sessionPath, 0755, true);
+    }
+
+    session_save_path($sessionPath);
     session_name('stageconnect_session');
     session_start();
 }
