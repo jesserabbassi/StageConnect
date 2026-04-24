@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StageConnect | Connexion</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="login">
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar flex-between">
+        <div class="logo">StageConnect</div>
+        <ul class="nav-links">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="dashboard.html" id="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="login.html" class="active" id="nav-auth-link">Connexion</a></li>
+          <li><a href="register.html" id="nav-register-link">Inscription</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-2">
+    <div id="flash-container"></div>
+  </div>
+
+  <main>
+    <section class="section auth-page">
+      <div class="container auth-shell">
+        <div class="form-box">
+          <span class="eyebrow mb-2">Authentification</span>
+          <h1 class="mb-2">Se connecter à StageConnect</h1>
+          <p class="mb-3">Accédez à votre portfolio, vos candidatures et, si besoin, au tableau de bord administrateur.</p>
+
+          <form action="../php/login.php" method="post">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+          </form>
+
+          <p class="mt-3 mb-0">
+            Pas encore de compte ?
+            <a href="register.html" class="inline-link">Créer un compte étudiant</a>
+          </p>
+        </div>
+
+        <div class="surface-panel auth-aside">
+          <span class="eyebrow mb-2">Pourquoi se connecter ?</span>
+          <h2 class="mb-3">Un espace unique pour toutes les étapes du stage</h2>
+          <ul>
+            <li>Compléter votre profil public et ajouter votre CV PDF.</li>
+            <li>Postuler aux offres sans ressaisir vos informations à chaque fois.</li>
+            <li>Suivre vos candidatures depuis votre espace portfolio.</li>
+            <li>Accéder au rôle administrateur si votre compte est promu dans la base.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>StageConnect | Connexion sécurisée avec sessions PHP et mots de passe chiffrés.</p>
+    </div>
+  </footer>
+</body>
+</html>

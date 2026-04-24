@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StageConnect | Dashboard administrateur</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar flex-between">
+        <div class="logo">StageConnect</div>
+        <ul class="nav-links">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="dashboard.html" class="active" id="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="login.html" id="nav-auth-link">Connexion</a></li>
+          <li><a href="register.html" id="nav-register-link">Inscription</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-2">
+    <div id="flash-container"></div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card dashboard-guard hidden" id="dashboard-guard">
+          <h1 class="mb-2">Accès administrateur requis</h1>
+          <p class="mb-2">
+            Cette page est réservée aux comptes ayant le rôle <strong>admin</strong>.
+          </p>
+          <p class="mb-0">
+            Connectez-vous avec un compte administrateur ou modifiez le rôle dans la base de données.
+          </p>
+        </div>
+
+        <div id="dashboard-content" class="hidden">
+          <div class="flex-between dashboard-hero mb-4">
+            <div class="section-heading">
+              <span class="eyebrow mb-2">Administration</span>
+              <h1 class="mb-2">Tableau de bord de gestion des stages</h1>
+              <p>Ajoutez des offres, consultez les candidatures reçues et téléchargez les CV des étudiants.</p>
+            </div>
+            <a href="offres.html" class="btn btn-outline">Voir la page publique des offres</a>
+          </div>
+
+          <div class="grid grid-3 stats-grid mb-4" id="dashboard-stats">
+            <div class="card">
+              <div class="stat-value">0</div>
+              <h3 class="card-title">Offres actives</h3>
+              <p class="card-text">Chargement...</p>
+            </div>
+          </div>
+
+          <div class="grid grid-2 mb-4">
+            <div class="form-box">
+              <h2 class="mb-3">Ajouter une offre</h2>
+              <form action="../php/add_offer.php" method="post">
+                <div class="form-group">
+                  <label for="title" class="form-label">Titre du stage</label>
+                  <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="company" class="form-label">Entreprise</label>
+                  <input type="text" id="company" name="company" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="location" class="form-label">Localisation</label>
+                  <input type="text" id="location" name="location" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="duration" class="form-label">Durée</label>
+                  <input type="text" id="duration" name="duration" class="form-control" placeholder="Exemple : 3 mois" required>
+                </div>
+                <div class="form-group">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea id="description" name="description" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publier l'offre</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h2 class="mb-3">Rappels de gestion</h2>
+              <div class="info-list">
+                <div class="info-item">Seuls les administrateurs peuvent publier ou supprimer les offres.</div>
+                <div class="info-item">Chaque candidature est liée à un compte étudiant, une offre et un CV PDF.</div>
+                <div class="info-item">Le bouton “Modifier” est prévu comme extension d'interface pour une future évolution.</div>
+                <div class="info-item">Une future intégration Groq AI peut être ajoutée dans la couche PHP sous forme de fonctionnalité optionnelle commentée.</div>
+              </div>
+            </div>
+          </div>
+
+          <section class="section">
+            <div class="section-heading mb-4">
+              <span class="eyebrow mb-2">Gestion des offres</span>
+              <h2 class="mb-2">Offres publiées</h2>
+              <p>Suppression directe avec requête sécurisée côté serveur.</p>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Titre</th>
+                    <th>Entreprise</th>
+                    <th>Localisation</th>
+                    <th>Durée</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-offers-body">
+                  <tr>
+                    <td colspan="6">Chargement des offres...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-heading mb-4">
+              <span class="eyebrow mb-2">Candidatures</span>
+              <h2 class="mb-2">Suivi des demandes étudiantes</h2>
+              <p>Le tableau inclut le lien de consultation ou de téléchargement du CV PDF.</p>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Étudiant</th>
+                    <th>Offre</th>
+                    <th>Statut</th>
+                    <th>Date</th>
+                    <th>CV</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-applications-body">
+                  <tr>
+                    <td colspan="5">Chargement des candidatures...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>StageConnect | Interface d'administration des offres et candidatures.</p>
+    </div>
+  </footer>
+</body>
+</html>

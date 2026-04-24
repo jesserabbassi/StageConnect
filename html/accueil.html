@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StageConnect | Accueil</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/accueil.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="accueil">
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar flex-between">
+        <div class="logo">StageConnect</div>
+        <ul class="nav-links">
+          <li><a href="accueil.html" class="active">Accueil</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="dashboard.html" id="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="login.html" id="nav-auth-link">Connexion</a></li>
+          <li><a href="register.html" id="nav-register-link">Inscription</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-2">
+    <div id="flash-container"></div>
+  </div>
+
+  <main>
+    <section class="section home-hero">
+      <div class="container hero-grid">
+        <div class="hero-surface hero-copy">
+          <span class="eyebrow mb-2">Projet académique professionnel</span>
+          <h1 class="mb-3">La plateforme claire et moderne pour gérer les stages des étudiants.</h1>
+          <p class="mb-3">
+            StageConnect centralise les offres de stage, le portfolio étudiant, l'envoi de CV et le suivi
+            des candidatures dans une interface sobre, responsive et pensée pour un contexte universitaire.
+          </p>
+          <div class="hero-actions">
+            <a href="offres.html" class="btn btn-primary">Consulter les offres</a>
+            <a href="portfolio.html" class="btn btn-outline">Créer mon portfolio</a>
+            <a href="register.html" class="btn btn-outline">Créer un compte</a>
+          </div>
+        </div>
+
+        <div class="surface-panel hero-side">
+          <div class="card">
+            <h3 class="card-title">Ce que la plateforme simplifie</h3>
+            <div class="info-list">
+              <div class="info-item">Publication centralisée des offres pour les étudiants.</div>
+              <div class="info-item">Portfolio étudiant public avec CV PDF téléchargeable.</div>
+              <div class="info-item">Suivi rapide des candidatures côté étudiant et administrateur.</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Technologies</h3>
+            <p class="card-text">
+              HTML, CSS, JavaScript, PHP natif, MySQL et PDO avec authentification sécurisée.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading mb-4">
+          <span class="eyebrow mb-2">Présentation</span>
+          <h2 class="mb-2">Une solution pensée pour les besoins du suivi de stage</h2>
+          <p>
+            Le projet répond au besoin de consultation des offres, de création de portfolio étudiant et
+            de gestion administrative dans un seul environnement web.
+          </p>
+        </div>
+
+        <div class="grid grid-2 presentation-grid">
+          <div class="card academic-highlight">
+            <h3 class="card-title">Objectifs pédagogiques</h3>
+            <p class="card-text">
+              Faciliter l'accès à l'information, structurer les candidatures et fournir une expérience
+              professionnelle cohérente pour les étudiants comme pour les responsables pédagogiques.
+            </p>
+          </div>
+          <div class="card academic-highlight">
+            <h3 class="card-title">Parcours utilisateur</h3>
+            <p class="card-text">
+              L'étudiant explore les offres, complète son portfolio, téléverse son CV PDF puis suit
+              l'état de ses candidatures depuis son espace personnel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading mb-4">
+          <span class="eyebrow mb-2">Fonctionnalités</span>
+          <h2 class="mb-2">Les services clés de StageConnect</h2>
+          <p>Chaque espace a été conçu pour rester simple à comprendre et rapide à utiliser.</p>
+        </div>
+
+        <div class="grid grid-2 feature-grid">
+          <div class="card">
+            <div class="feature-icon mb-2">01</div>
+            <h3 class="card-title">Consulter les offres</h3>
+            <p class="card-text">
+              Les étudiants accèdent à des offres structurées avec titre, entreprise, localisation, durée
+              et description synthétique.
+            </p>
+          </div>
+          <div class="card">
+            <div class="feature-icon mb-2">02</div>
+            <h3 class="card-title">Créer un portfolio</h3>
+            <p class="card-text">
+              Chaque étudiant peut renseigner son profil public, ses compétences, sa formation et ses projets.
+            </p>
+          </div>
+          <div class="card">
+            <div class="feature-icon mb-2">03</div>
+            <h3 class="card-title">Postuler aux stages</h3>
+            <p class="card-text">
+              La candidature est liée au compte étudiant et au CV PDF déjà enregistré pour garder un flux propre.
+            </p>
+          </div>
+          <div class="card">
+            <div class="feature-icon mb-2">04</div>
+            <h3 class="card-title">Suivre les candidatures</h3>
+            <p class="card-text">
+              Les statuts sont visibles par l'étudiant et les administrateurs disposent d'un tableau récapitulatif.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="flex-between offers-header mb-4">
+          <div class="section-heading">
+            <span class="eyebrow mb-2">Aperçu des offres</span>
+            <h2 class="mb-2">Dernières opportunités publiées</h2>
+            <p>Les offres ci-dessous proviennent de la base de données et sont chargées dynamiquement.</p>
+          </div>
+          <a href="offres.html" class="btn btn-outline">Voir toutes les offres</a>
+        </div>
+        <div class="grid grid-3 offer-preview-grid" id="home-offers-grid">
+          <div class="empty-state">
+            <p class="mb-1">Chargement des offres en cours...</p>
+            <p class="small-text">Si aucune offre n'est publiée, vous verrez un message ici.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>StageConnect | Plateforme de gestion des stages pour étudiants et administrateurs.</p>
+    </div>
+  </footer>
+</body>
+</html>

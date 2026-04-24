@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StageConnect | Portfolio étudiant</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="portfolio">
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar flex-between">
+        <div class="logo">StageConnect</div>
+        <ul class="nav-links">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="dashboard.html" id="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="login.html" id="nav-auth-link">Connexion</a></li>
+          <li><a href="register.html" id="nav-register-link">Inscription</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-2">
+    <div id="flash-container"></div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading mb-4">
+          <span class="eyebrow mb-2">Portfolio étudiant</span>
+          <h1 class="mb-2">Construire un profil public professionnel</h1>
+          <p id="portfolio-page-intro">
+            Complétez votre profil, ajoutez vos compétences, votre formation, vos projets et votre CV PDF
+            pour pouvoir postuler rapidement aux offres.
+          </p>
+        </div>
+
+        <div id="portfolio-access-note" class="flash flash-info hidden mb-4"></div>
+
+        <div class="grid grid-2 portfolio-layout">
+          <div class="form-box" id="portfolio-form-box">
+            <h2 class="mb-3">Mettre à jour mon portfolio</h2>
+            <form action="../php/save_portfolio.php" method="post" enctype="multipart/form-data" id="portfolio-form">
+              <div class="form-group">
+                <label for="full_name" class="form-label">Nom complet</label>
+                <input type="text" id="full_name" name="full_name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Téléphone</label>
+                <input type="text" id="phone" name="phone" class="form-control" placeholder="+216 00 000 000">
+              </div>
+              <div class="form-group">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea id="bio" name="bio" class="form-control" placeholder="Présentez brièvement votre profil, vos objectifs et vos centres d'intérêt."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="skills" class="form-label">Compétences</label>
+                <textarea id="skills" name="skills" class="form-control" placeholder="Exemple : PHP, MySQL, HTML, CSS, JavaScript, Git"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="education" class="form-label">Formation</label>
+                <textarea id="education" name="education" class="form-control" placeholder="Décrivez votre parcours académique."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="experience" class="form-label">Projets / Expériences</label>
+                <textarea id="experience" name="experience" class="form-control" placeholder="Mentionnez vos projets académiques, stages ou expériences associatives."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="languages" class="form-label">Langues</label>
+                <textarea id="languages" name="languages" class="form-control" placeholder="Exemple : Français, Anglais, Arabe"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="cv" class="form-label">CV PDF</label>
+                <input type="file" id="cv" name="cv" class="form-control" accept=".pdf,application/pdf">
+                <p class="status-note mt-1">Fichier PDF uniquement, taille maximale recommandée : 2 Mo.</p>
+                <div id="portfolio-current-cv" class="mt-2"></div>
+              </div>
+              <button type="submit" class="btn btn-primary">Enregistrer le portfolio</button>
+            </form>
+          </div>
+
+          <div class="portfolio-preview">
+            <div class="card profile-summary">
+              <span class="eyebrow mb-2">Aperçu public</span>
+              <h2 class="mb-2" id="preview-name">Profil étudiant</h2>
+              <p class="mb-2" id="preview-bio">Les informations de votre portfolio apparaîtront ici après enregistrement.</p>
+              <div class="meta-list" id="preview-meta">
+                <span class="meta-item">Email non renseigné</span>
+              </div>
+            </div>
+
+            <div class="card profile-block">
+              <h3 class="card-title">Compétences</h3>
+              <p id="preview-skills">Aucune compétence affichée pour le moment.</p>
+            </div>
+
+            <div class="card profile-block">
+              <h3 class="card-title">Formation</h3>
+              <p id="preview-education">Aucune formation renseignée pour le moment.</p>
+            </div>
+
+            <div class="card profile-block">
+              <h3 class="card-title">Projets / Expériences</h3>
+              <p id="preview-experience">Aucune expérience renseignée pour le moment.</p>
+            </div>
+
+            <div class="card profile-block">
+              <h3 class="card-title">Langues</h3>
+              <p id="preview-languages">Aucune langue renseignée pour le moment.</p>
+            </div>
+
+            <div class="card profile-block public-link-box">
+              <h3 class="card-title">Lien public du portfolio</h3>
+              <p class="mb-2" id="public-link-text">Le lien public sera généré dès que votre profil sera disponible.</p>
+              <div id="public-link-anchor"></div>
+            </div>
+          </div>
+        </div>
+
+        <section class="section">
+          <div class="section-heading mb-4">
+            <span class="eyebrow mb-2">Suivi des candidatures</span>
+            <h2 class="mb-2">Mes candidatures enregistrées</h2>
+            <p>Les statuts sont visibles ici pour permettre à l'étudiant de suivre chaque demande.</p>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Offre</th>
+                  <th>Entreprise</th>
+                  <th>Statut</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="applications-body">
+                <tr>
+                  <td colspan="4">Connectez-vous pour afficher vos candidatures.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>StageConnect | Présentez votre profil et suivez vos démarches de candidature.</p>
+    </div>
+  </footer>
+</body>
+</html>
