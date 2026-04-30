@@ -6,7 +6,7 @@
   <title>StageConnect | Dashboard administrateur</title>
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/dashboard.css">
-  <script src="../js/main.js" defer></script>
+  <script src="../js/main.js?v=dashboard-actions-3" defer></script>
 </head>
 <body data-page="dashboard">
   <header class="site-header">
@@ -91,9 +91,9 @@
             <div class="card">
               <h2 class="mb-3">Rappels de gestion</h2>
               <div class="info-list">
-                <div class="info-item">Seuls les administrateurs peuvent publier ou supprimer les offres.</div>
+                <div class="info-item">Seuls les administrateurs peuvent publier, modifier ou supprimer les offres.</div>
                 <div class="info-item">Chaque candidature est liée à un compte étudiant, une offre et un CV PDF.</div>
-                <div class="info-item">Le bouton “Modifier” est prévu comme extension d'interface pour une future évolution.</div>
+                <div class="info-item">Les candidatures peuvent etre acceptees, refusees ou remises en attente.</div>
                 <div class="info-item">Une future intégration Groq AI peut être ajoutée dans la couche PHP sous forme de fonctionnalité optionnelle commentée.</div>
               </div>
             </div>
@@ -103,7 +103,7 @@
             <div class="section-heading mb-4">
               <span class="eyebrow mb-2">Gestion des offres</span>
               <h2 class="mb-2">Offres publiées</h2>
-              <p>Suppression directe avec requête sécurisée côté serveur.</p>
+              <p>Modification et suppression directes avec requetes securisees cote serveur.</p>
             </div>
 
             <div class="table-wrapper">
@@ -142,7 +142,7 @@
                     <th>Offre</th>
                     <th>Statut</th>
                     <th>Date</th>
-                    <th>CV</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="dashboard-applications-body">

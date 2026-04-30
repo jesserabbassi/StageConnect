@@ -14,13 +14,13 @@ try {
     $studentsCount = (int) $pdo->query("SELECT COUNT(*) FROM users WHERE role = 'student'")->fetchColumn();
 
     $offers = $pdo->query(
-        'SELECT id, title, company, location, duration, created_at
+        'SELECT id, title, company, location, duration, description, created_at
          FROM offers
          ORDER BY created_at DESC'
     )->fetchAll();
 
     $applications = $pdo->query(
-        'SELECT a.status, a.created_at,
+        'SELECT a.id, a.status, a.created_at,
                 u.full_name AS student_name,
                 u.email AS student_email,
                 o.title AS offer_title,
