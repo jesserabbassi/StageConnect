@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/accueil.css">
   <script src="../js/main.js" defer></script>
+
 </head>
 <body data-page="accueil">
+
   <header class="site-header">
     <div class="container">
       <div class="navbar flex-between">
-        <div class="logo">🎓 StageConnect</div>
+        <div class="logo">StageConnect</div>
         <ul class="nav-links">
           <li><a href="accueil.html" class="active">Accueil</a></li>
           <li><a href="offres.html">Offres</a></li>
@@ -64,6 +66,8 @@
         </div>
       </div>
     </section>
+      </div>
+    </div>
 
     <section class="section">
       <div class="container">
@@ -76,26 +80,42 @@
           </p>
         </div>
 
-        <div class="grid grid-2 presentation-grid">
-          <div class="card academic-highlight">
-            <h3 class="card-title">Objectifs pédagogiques</h3>
-            <p class="card-text">
-              Faciliter l'accès à l'information, structurer les candidatures et fournir une expérience
-              professionnelle cohérente pour les étudiants comme pour les responsables pédagogiques.
-            </p>
+        <div class="presentation-split">
+
+          <div class="presentation-img-wrap">
+            <img
+              src="../images/stage.avif"
+              alt="Étudiants collaborant sur un ordinateur portable"
+              loading="lazy"
+            />
+            <div class="img-badge">
+              <span class="img-badge-dot"></span>
+              Plateforme active — 2025/2026
+            </div>
           </div>
-          <div class="card academic-highlight">
-            <h3 class="card-title">Parcours utilisateur</h3>
-            <p class="card-text">
-              L'étudiant explore les offres, complète son portfolio, téléverse son CV PDF puis suit
-              l'état de ses candidatures depuis son espace personnel.
-            </p>
+
+          <div>
+            <div class="card academic-highlight mb-3">
+              <h3 class="card-title">Objectifs pédagogiques</h3>
+              <p class="card-text">
+                Faciliter l'accès à l'information, structurer les candidatures et fournir une expérience
+                professionnelle cohérente pour les étudiants comme pour les responsables pédagogiques.
+              </p>
+            </div>
+            <div class="card academic-highlight">
+              <h3 class="card-title">Parcours utilisateur</h3>
+              <p class="card-text">
+                L'étudiant explore les offres, complète son portfolio, téléverse son CV PDF puis suit
+                l'état de ses candidatures depuis son espace personnel.
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="background: var(--background-alt);">
       <div class="container">
         <div class="section-heading mb-4">
           <span class="eyebrow mb-2">Fonctionnalités</span>
@@ -104,35 +124,68 @@
         </div>
 
         <div class="grid grid-2 feature-grid">
+
           <div class="card">
-            <div class="feature-icon mb-2">01</div>
+            <div class="feature-card-img">
+              <img
+                src="../images/resume.avif"
+                alt="Parcourir les offres de stage"
+                loading="lazy"
+              />
+              <span class="feature-num">01</span>
+            </div>
             <h3 class="card-title">Consulter les offres</h3>
             <p class="card-text">
               Les étudiants accèdent à des offres structurées avec titre, entreprise, localisation, durée
               et description synthétique.
             </p>
           </div>
+
           <div class="card">
-            <div class="feature-icon mb-2">02</div>
+            <div class="feature-card-img">
+              <img
+                src="../images/portfilio.avif"
+                alt="Créer son portfolio étudiant"
+                loading="lazy"
+              />
+              <span class="feature-num">02</span>
+            </div>
             <h3 class="card-title">Créer un portfolio</h3>
             <p class="card-text">
               Chaque étudiant peut renseigner son profil public, ses compétences, sa formation et ses projets.
             </p>
           </div>
+
           <div class="card">
-            <div class="feature-icon mb-2">03</div>
+            <div class="feature-card-img">
+              <img
+                src="../images/postuler.avif"
+                alt="Postuler à un stage en ligne"
+                loading="lazy"
+              />
+              <span class="feature-num">03</span>
+            </div>
             <h3 class="card-title">Postuler aux stages</h3>
             <p class="card-text">
               La candidature est liée au compte étudiant et au CV PDF déjà enregistré pour garder un flux propre.
             </p>
           </div>
+
           <div class="card">
-            <div class="feature-icon mb-2">04</div>
+            <div class="feature-card-img">
+              <img
+                src="../images/stat.avif"
+                alt="Tableau de bord de suivi des candidatures"
+                loading="lazy"
+              />
+              <span class="feature-num">04</span>
+            </div>
             <h3 class="card-title">Suivre les candidatures</h3>
             <p class="card-text">
               Les statuts sont visibles par l'étudiant et les administrateurs disposent d'un tableau récapitulatif.
             </p>
           </div>
+
         </div>
       </div>
     </section>
@@ -155,6 +208,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -162,5 +216,6 @@
       <p>StageConnect | Plateforme de gestion des stages pour étudiants et administrateurs.</p>
     </div>
   </footer>
+
 </body>
 </html>
