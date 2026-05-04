@@ -6,7 +6,9 @@
   <title>StageConnect | Accueil</title>
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/accueil.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
   <script src="../js/main.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
 </head>
 <body data-page="accueil">
   <header class="site-header">
@@ -162,5 +164,41 @@
       <p>StageConnect | Plateforme de gestion des stages pour étudiants et administrateurs.</p>
     </div>
   </footer>
+  <div class="chatbot-widget" id="chatbot-widget">
+    <button type="button" class="btn btn-primary chatbot-toggle" id="chatbot-toggle" aria-controls="chatbot-panel" aria-expanded="false">
+      Assistant StageConnect
+    </button>
+
+    <div class="card chatbot-panel hidden" id="chatbot-panel">
+      <div class="chatbot-header">
+        <h3>Besoin d'aide ?</h3>
+        <p>Posez vos questions sur les offres, le portfolio, le CV ou les candidatures.</p>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="chatbot-message chatbot-message-bot">
+          <div class="chatbot-message-bubble">
+            Bonjour, je peux vous aider a comprendre comment utiliser StageConnect et preparer votre candidature.
+          </div>
+        </div>
+      </div>
+
+      <form class="chatbot-form" id="chatbot-form">
+        <div class="chatbot-form-row">
+          <input
+            type="text"
+            id="chatbot-input"
+            class="form-control"
+            placeholder="Ecrivez votre question..."
+            maxlength="500"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+        <p class="chatbot-status" id="chatbot-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
