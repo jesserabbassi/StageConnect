@@ -499,11 +499,72 @@ function renderDashboardOffers(offers) {
             <input type="hidden" name="offer_id" value="${escapeHtml(offer.id)}">
             <button type="submit" class="btn btn-danger">Supprimer</button>
           </form>
-          <button type="button" class="btn btn-outline" disabled>Modifier</button>
+          <button type="button" class="btn btn-outline" data-edit-offer-id="${escapeHtml(offer.id)}">Modifier</button>
         </div>
       </td>
     </tr>
+    <tr class="hidden" id="offer-edit-row-${escapeHtml(offer.id)}">
+      <td colspan="6">
+        <form action="${apiBase}/update_offer.php" method="post" class="inline-edit-form">
+          <input type="hidden" name="offer_id" value="${escapeHtml(offer.id)}">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="edit-title-${escapeHtml(offer.id)}">Titre</label>
+              <input class="form-control" id="edit-title-${escapeHtml(offer.id)}" name="title" value="${escapeHtml(offer.title)}" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-company-${escapeHtml(offer.id)}">Entreprise</label>
+              <input class="form-control" id="edit-company-${escapeHtml(offer.id)}" name="company" value="${escapeHtml(offer.company)}" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-location-${escapeHtml(offer.id)}">Localisation</label>
+              <input class="form-control" id="edit-location-${escapeHtml(offer.id)}" name="location" value="${escapeHtml(offer.location)}" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-duration-${escapeHtml(offer.id)}">Duree</label>
+              <input class="form-control" id="edit-duration-${escapeHtml(offer.id)}" name="duration" value="${escapeHtml(offer.duration)}" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="edit-description-${escapeHtml(offer.id)}">Description</label>
+            <textarea class="form-control" id="edit-description-${escapeHtml(offer.id)}" name="description" required>${escapeHtml(offer.description)}</textarea>
+          </div>
+          <div class="table-actions">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="button" class="btn btn-outline" data-cancel-edit-id="${escapeHtml(offer.id)}">Annuler</button>
+          </div>
+        </form>
+      </td>
+    </tr>
   `).join("");
+
+  body.querySelectorAll("[data-edit-offer-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const row = document.getElementById(`offer-edit-row-${button.dataset.editOfferId}`);
+      if (row) {
+        row.classList.toggle("hidden");
+      }
+    });
+  });
+
+  body.querySelectorAll("[data-cancel-edit-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const row = document.getElementById(`offer-edit-row-${button.dataset.cancelEditId}`);
+      if (row) {
+        row.classList.add("hidden");
+      }
+    });
+  });
+}
+
+function buildApplicationStatusForm(applicationId, status, label, buttonClass) {
+  return `
+    <form action="${apiBase}/update_application_status.php" method="post" class="table-form">
+      <input type="hidden" name="application_id" value="${escapeHtml(applicationId)}">
+      <input type="hidden" name="status" value="${escapeHtml(status)}">
+      <button type="submit" class="btn ${escapeHtml(buttonClass)}">${escapeHtml(label)}</button>
+    </form>
+  `;
 }
 
 function renderDashboardApplications(applications) {
@@ -531,9 +592,14 @@ function renderDashboardApplications(applications) {
       <td>${statusBadge(application.status)}</td>
       <td>${escapeHtml(formatDate(application.created_at))}</td>
       <td>
-        ${application.cv_url
-          ? `<a href="${escapeHtml(application.cv_url)}" class="btn btn-outline" target="_blank" rel="noopener">Voir le CV</a>`
-          : `<span class="small-text">CV non disponible</span>`}
+        <div class="table-actions">
+          ${application.cv_url
+            ? `<a href="${escapeHtml(application.cv_url)}" class="btn btn-outline" target="_blank" rel="noopener">Voir le CV</a>`
+            : `<span class="small-text">CV non disponible</span>`}
+          ${buildApplicationStatusForm(application.id, "accepted", "Accepter", "btn-success")}
+          ${buildApplicationStatusForm(application.id, "rejected", "Refuser", "btn-danger")}
+          ${application.status !== "pending" ? buildApplicationStatusForm(application.id, "pending", "Remettre en attente", "btn-outline") : ""}
+        </div>
       </td>
     </tr>
   `).join("");

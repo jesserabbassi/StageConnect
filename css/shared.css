@@ -300,6 +300,23 @@ p {
   transform: none;
 }
 
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Nav link hover color */
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Button focus outline */
+.btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid rgba(217, 227, 239, 0.95);
